@@ -1,0 +1,21 @@
+framework:
+    secret:          Hell yeah!
+    form:            true
+    csrf_protection: true
+    default_locale:  en
+    translator:      { fallback: en }
+    profiler:        { only_exceptions: false }
+    test: ~
+    session:
+        storage_id: session.storage.filesystem
+
+nucleus_core:
+    annotation_container_generators:
+        test_annotation:
+            annotationClass: Nucleus\Bundle\CoreBundle\Tests\DependencyInjection\Annotation
+            generatorClass: Nucleus\Bundle\CoreBundle\Tests\DependencyInjection\AnnotationTagGenerator
+
+
+services:
+    test_service:
+        class: Nucleus\Bundle\CoreBundle\Tests\DependencyInjection\AnnotatedService

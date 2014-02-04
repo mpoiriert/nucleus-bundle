@@ -22,9 +22,10 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
     {
         return array(
             array(array(array()),null,'annotationClass'),
-            array(array(array('annotationClass'=>null)),null,'generatorClass'),
-            array(array(array('annotationClass'=>null,'generatorClass'=>'stdClass')),null,'Nucleus\DependencyInjection\IAnnotationContainerGenerator'),
-            array(array(array('annotationClass'=>null,'generatorClass'=>'Nucleus\Bundle\CoreBundle\Tests\DependencyInjection\GeneratorClass')))
+            array(array(array('annotationClass'=>null)),null,'annotationClass'),
+            array(array(array('annotationClass'=>'stdClass')),null,'generatorClass'),
+            array(array(array('annotationClass'=>'stdClass','generatorClass'=>'stdClass')),null,'Nucleus\DependencyInjection\IAnnotationContainerGenerator'),
+            array(array(array('annotationClass'=>'stdClass','generatorClass'=>'Nucleus\Bundle\CoreBundle\Tests\DependencyInjection\GeneratorClass')))
         );
     }
 
@@ -81,9 +82,7 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
 
 class GeneratorClass implements IAnnotationContainerGenerator
 {
-
     public function processContainerBuilder(\Nucleus\Bundle\CoreBundle\GenerationContext $context)
     {
-        // TODO: Implement processContainerBuilder() method.
     }
 }

@@ -19,3 +19,6 @@ nucleus_core:
 services:
     test_service:
         class: Nucleus\Bundle\CoreBundle\Tests\DependencyInjection\AnnotatedService
+
+    test_listener_service:
+        class: Nucleus\Bundle\CoreBundle\Tests\DependencyInjection\ListenerService

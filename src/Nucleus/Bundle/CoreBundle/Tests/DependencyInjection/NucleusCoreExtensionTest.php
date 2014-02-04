@@ -6,11 +6,28 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class NucleusCoreExtensionTest extends WebTestCase
 {
-    public function test()
+    public function testAnnotationGenerator()
     {
         $client = static::createClient();
         $this->assertTrue(AnnotationTagGenerator::$haveBeenRun);
         $object = new \ReflectionObject($client->getContainer());
         $this->assertTrue(strpos(file_get_contents($object->getFileName()),'/* This is a test for annotation generation */') !== false);
+    }
+
+    public function testEventDispatcher()
+    {
+        $client = static::createClient();
+        $eventDispatcher = $client->getContainer()->get('event_dispatcher');
+        $this->assertInstanceOf('Nucleus\EventDispatcher\InvokerEventDispatcher',$eventDispatcher);
+
+        /* @var $eventDispatcher \Nucleus\EventDispatcher\InvokerEventDispatcher */
+        $eventDispatcher->addListenerService('WebTestCase.test',array('test_listener_service','listen'));
+        $event = $eventDispatcher->notify($this,'WebTestCase.test',array('param1'=>1));
+
+        $this->assertTrue(ListenerService::$called);
+        $this->assertSame($event, ListenerService::$event);
+        $this->assertEquals(1, ListenerService::$param1);
+        $this->assertEquals('WebTestCase.test', ListenerService::$eventName);
+        $this->assertSame($this, ListenerService::$subject);
     }
 }

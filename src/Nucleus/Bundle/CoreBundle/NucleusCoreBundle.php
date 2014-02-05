@@ -2,6 +2,7 @@
 
 namespace Nucleus\Bundle\CoreBundle;
 
+use Nucleus\Bundle\CoreBundle\DependencyInjection\NucleusCompilerPass;
 use Symfony\Component\DependencyInjection\Compiler\PassConfig;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;

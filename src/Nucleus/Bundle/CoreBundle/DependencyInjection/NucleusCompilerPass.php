@@ -1,9 +1,7 @@
 <?php
 
-namespace Nucleus\Bundle\CoreBundle;
+namespace Nucleus\Bundle\CoreBundle\DependencyInjection;
 
-use Nucleus\Bundle\CoreBundle\Annotation\IAnnotationContainerGenerator;
-use Nucleus\Bundle\CoreBundle\DependencyInjection\Configuration;
 use Symfony\Component\Config\Definition\Processor;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

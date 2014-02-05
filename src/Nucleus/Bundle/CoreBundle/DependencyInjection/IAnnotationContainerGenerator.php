@@ -1,12 +1,6 @@
 <?php
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-namespace Nucleus\Bundle\CoreBundle\Annotation;
-use Nucleus\Bundle\CoreBundle\GenerationContext;
+namespace Nucleus\Bundle\CoreBundle\DependencyInjection;
 
 /**
  * Description of IAnnotationContainerGenerator

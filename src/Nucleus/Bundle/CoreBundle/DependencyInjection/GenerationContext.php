@@ -5,7 +5,7 @@
  * and open the template in the editor.
  */
 
-namespace Nucleus\Bundle\CoreBundle;
+namespace Nucleus\Bundle\CoreBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;

@@ -2,16 +2,18 @@
 
 namespace Nucleus\Bundle\CoreBundle\Tests\DependencyInjection;
 
-use Nucleus\Bundle\CoreBundle\Annotation\IAnnotationContainerGenerator;
+use Nucleus\Bundle\CoreBundle\DependencyInjection\IAnnotationContainerGenerator;
+use Nucleus\Bundle\CoreBundle\DependencyInjection\GenerationContext;
+use Nucleus\Bundle\CoreBundle\DependencyInjection\Definition;
 
 class AnnotationTagGenerator implements IAnnotationContainerGenerator
 {
     static public $comment = '/* This is a test for annotation generation */';
     static public $haveBeenRun = false;
 
-    public function processContainerBuilder(\Nucleus\Bundle\CoreBundle\GenerationContext $context)
+    public function processContainerBuilder(GenerationContext $context)
     {
         self::$haveBeenRun = true;
-        \Nucleus\Bundle\CoreBundle\Definition::setCodeInitialization($context->getServiceDefinition(),static::$comment);
+        Definition::setCodeInitialization($context->getServiceDefinition(),static::$comment);
     }
 }

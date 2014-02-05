@@ -16,6 +16,10 @@
         "phpunit/phpunit": "3.7.*",
         "symfony/symfony": "~2.4"
     },
+    "suggest": {
+        "mpoiriert/binder-bundle": "Hide session usage via annotation on service attribute",
+        "mpoiriert/business-rule-engine-bundle": "Service that implement the specification pattern"
+    },
     "require": {
         "php": ">=5.3",
         "symfony/framework-bundle": "~2.4",

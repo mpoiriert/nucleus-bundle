@@ -10,8 +10,8 @@
 namespace Nucleus\Bundle\CoreBundle\Tests\DependencyInjection;
 
 
-use Nucleus\Bundle\CoreBundle\Annotation\GenerationContext;
-use Nucleus\Bundle\CoreBundle\Annotation\IAnnotationContainerGenerator;
+use Nucleus\Bundle\CoreBundle\DependencyInjection\GenerationContext;
+use Nucleus\Bundle\CoreBundle\DependencyInjection\IAnnotationContainerGenerator;
 use Nucleus\Bundle\CoreBundle\DependencyInjection\Configuration;
 use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Definition\Processor;
@@ -24,7 +24,7 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
             array(array(array()),null,'annotationClass'),
             array(array(array('annotationClass'=>null)),null,'annotationClass'),
             array(array(array('annotationClass'=>'stdClass')),null,'generatorClass'),
-            array(array(array('annotationClass'=>'stdClass','generatorClass'=>'stdClass')),null,'Nucleus\DependencyInjection\IAnnotationContainerGenerator'),
+            array(array(array('annotationClass'=>'stdClass','generatorClass'=>'stdClass')),null,'Nucleus\Bundle\CoreBundle\DependencyInjection\IAnnotationContainerGenerator'),
             array(array(array('annotationClass'=>'stdClass','generatorClass'=>'Nucleus\Bundle\CoreBundle\Tests\DependencyInjection\GeneratorClass')))
         );
     }
@@ -82,7 +82,7 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
 
 class GeneratorClass implements IAnnotationContainerGenerator
 {
-    public function processContainerBuilder(\Nucleus\Bundle\CoreBundle\GenerationContext $context)
+    public function processContainerBuilder(GenerationContext $context)
     {
     }
 }

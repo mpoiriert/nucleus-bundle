@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by JetBrains PhpStorm.
- * User: Martin
- * Date: 14-02-03
- * Time: 11:49
- * To change this template use File | Settings | File Templates.
- */
 
 namespace Nucleus\Bundle\CoreBundle\DependencyInjection;
 
@@ -45,10 +38,10 @@ class Configuration implements ConfigurationInterface
                                 ->ifTrue(function($value) {
                                         $reflection = new \ReflectionClass($value);
                                         return !$reflection->isSubclassOf(
-                                            '\Nucleus\Bundle\CoreBundle\Annotation\IAnnotationContainerGenerator'
+                                            '\Nucleus\Bundle\CoreBundle\DependencyInjection\IAnnotationContainerGenerator'
                                         );
                                     })
-                                    ->thenInvalid('Class [%s] must implement [Nucleus\DependencyInjection\IAnnotationContainerGenerator]')
+                                    ->thenInvalid('Class [%s] must implement [Nucleus\Bundle\CoreBundle\DependencyInjection\IAnnotationContainerGenerator]')
                                 ->end()
                             ->end()
                          ->end()

@@ -48,8 +48,12 @@ class NucleusCompilerPass implements CompilerPassInterface
         $annotationParser = $this->getAnnotationParser();
         foreach ($container->getDefinitions() as $id => $definition) {
 
-            if(!$class = $definition->getClass()) {
-                continue;
+            switch(true) {
+                case !($class = $definition->getClass()):
+                case $definition->getFactoryClass():
+                case $definition->getFactoryService():
+                case $definition->getFactoryMethod():
+                    continue 2;
             }
 
             try {

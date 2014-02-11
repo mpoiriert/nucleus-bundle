@@ -8,7 +8,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher;
 use Symfony\Component\EventDispatcher\Event as BaseEvent;
 
-class InvokerEventDispatcher extends ContainerAwareEventDispatcher
+class InvokerEventDispatcher extends ContainerAwareEventDispatcher implements IEventDispatcher
 {
     /**
      * @var \Nucleus\Invoker\IInvoker

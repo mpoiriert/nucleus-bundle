@@ -33,7 +33,7 @@
             "Nucleus\\Application": "src/"
         },
         "files": [
-            "src/nucleus/functions.php"
+            "src/Nucleus/functions.php"
         ]
     }
 }

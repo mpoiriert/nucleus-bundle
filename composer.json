@@ -29,7 +29,8 @@
         "psr-0": {
             "Nucleus\\Bundle\\CoreBundle": "src/",
             "Nucleus\\Annotation": "src/",
-            "Nucleus\\EventDispatcher": "src/"
+            "Nucleus\\EventDispatcher": "src/",
+            "Nucleus\\Application": "src/"
         }
     }
 }

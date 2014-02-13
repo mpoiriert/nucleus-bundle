@@ -21,6 +21,7 @@ class NucleusCoreExtension extends Extension
         $loader = new XmlFileLoader($container, $fileLocator);
         $loader->load('invoker.xml');
         $loader->load('event_dispatcher.xml');
+        $loader->load('variable_registry.xml');
     }
 
     public function getAlias()

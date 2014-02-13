@@ -3,6 +3,7 @@
 namespace Nucleus\Bundle\CoreBundle\Tests\DependencyInjection;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Nucleus\Application\IVariableRegistry;
 
 class NucleusCoreExtensionTest extends WebTestCase
 {
@@ -29,5 +30,12 @@ class NucleusCoreExtensionTest extends WebTestCase
         $this->assertEquals(1, ListenerService::$param1);
         $this->assertEquals('WebTestCase.test', ListenerService::$eventName);
         $this->assertSame($this, ListenerService::$subject);
+    }
+
+    public function testVariableRegistry()
+    {
+        $client = static::createClient();
+        $eventDispatcher = $client->getContainer()->get(IVariableRegistry::NUCLEUS_SERVICE_NAME);
+        $this->assertInstanceOf('Nucleus\Application\IVariableRegistry',$eventDispatcher);
     }
 }

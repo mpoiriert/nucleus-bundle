@@ -31,6 +31,9 @@
             "Nucleus\\Annotation": "src/",
             "Nucleus\\EventDispatcher": "src/",
             "Nucleus\\Application": "src/"
-        }
+        },
+        "files": [
+            "src/nucleus/functions.php"
+        ]
     }
 }

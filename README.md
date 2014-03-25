@@ -34,8 +34,8 @@ You also have some static method in Nucleus\Bundle\CoreBundle\DependencyInjectio
 If you want a example you can check the test class Nucleus\Bundle\CoreBundle\Tests\DependencyInjection\AnnotationTagGenerator
 and also the [mpoiriert/binder-bundle](https://github.com/mpoiriert/binder-bundle)
 
-Nucleus\EventDispatcher\InvokerEventDispatcher
-----------------------------------------------
+Nucleus\Bundle\CoreBundle\EventDispatcher\InvokerEventDispatcher
+----------------------------------------------------------------
 
 The way you must should use the new event dispatcher is by using the InvokerEventDispatcher::notify() method who does
 receive a $subject, $eventName and $parameters as parameter. The Invoker will map the parameters to the "listeners" of
@@ -50,7 +50,7 @@ method of a service to be call directly without having to redefine another metho
 
      $eventDispatcher = $client->getContainer()->get('event_dispatcher');
 
-     /* @var $eventDispatcher \Nucleus\EventDispatcher\InvokerEventDispatcher */
+     /* @var $eventDispatcher \Nucleus\Bundle\CoreBundle\EventDispatcher\InvokerEventDispatcher */
      $eventDispatcher->addListenerService('WebTestCase.test',array('test_listener_service','listen'));
 
      $user = new User();
@@ -68,6 +68,6 @@ method of a service to be call directly without having to redefine another metho
 The Invoker is in charge of mapping the $subject, $event, $eventName and any parameters pass to the event.
 
 You can still create typed event but you will need to use the original EventDispatcherInterface::dispatch() method.
-Be sure to extends from the Nucleus\EventDispatcher\Event if you want to use the mapping functionality of parameters.
+Be sure to extends from the Nucleus\Bundle\CoreBundle\EventDispatcher if you want to use the mapping functionality of parameters.
 You could override the Event::getParameters() method an return processed parameter from the event.
 

@@ -18,6 +18,9 @@
     },
     "suggest": {
         "mpoiriert/binder-bundle": "Hide session usage via annotation on service attribute",
+        "mpoiriert/business-rule-engine-bundle": "Service that implement the specification pattern",
+        "mpoiriert/nucleus-console-bundle": "System to convert any service method in a command line task easily",
+        "mpoiriert/nucleus-migration-bundle": "Structure to manage migration script base on task execution",
         "mpoiriert/business-rule-engine-bundle": "Service that implement the specification pattern"
     },
     "require": {
@@ -27,13 +30,11 @@
     },
     "autoload": {
         "psr-0": {
-            "Nucleus\\Bundle\\CoreBundle": "src/",
-            "Nucleus\\Annotation": "src/",
-            "Nucleus\\EventDispatcher": "src/",
-            "Nucleus\\Application": "src/"
+            "Nucleus\\Bundle\\CoreBundle": ""
         },
         "files": [
-            "src/Nucleus/functions.php"
+            "functions.php"
         ]
-    }
+    },
+    "target-dir": "Nucleus/Bundle/CoreBundle"
 }

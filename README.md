@@ -1,13 +1,15 @@
 Nucleus-Bundle
 ==============
 
+[![Build Status](https://api.travis-ci.org/mpoiriert/nucleus-bundle.png?branch=master)](http://travis-ci.org/mpoiriert/nucleus-bundle)
+
 This is a base bundle that is use by other bundle Nucleus bundle.
 
 By itself it have a generic compiler pass to help modifying the container for annotation.
 
 Also it does implement the [Nucleus\Invoker\IInvoker](https://github.com/mpoiriert/invoker) as a service.
 
-It also redefined the event_dispatcher service for the class Nucleus\EventDispatcher\InvokerEventDispatcher.
+It also redefined the event_dispatcher service for the class Nucleus\Bundle\CoreBundle\EventDispatcher\InvokerEventDispatcher.
 
 NucleusCompilerPass
 -------------------
